@@ -1,11 +1,13 @@
-<div class="music-player">
-  <div class="image-container">
-    <img id="cover" src="https://imgur.com/llxh5xy.jpg" alt="Cover Image" />
-    <div class="controls">
-      <button id="play-pause" onclick="playPause()">▹</button> <!-- Cute Play Icon -->
+<div class="center-container">
+  <div class="music-player">
+    <div class="image-container">
+      <img id="cover" src="https://imgur.com/llxh5xy.jpg" alt="Cover Image" />
+      <div class="controls">
+        <button id="play-pause" onclick="playPause()">▹</button> <!-- Cute Play Icon -->
+      </div>
     </div>
+    <div id="player"></div>
   </div>
-  <div id="player"></div>
 </div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -54,16 +56,23 @@
 </script>
 
 <style>
+  /* Centering container */
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at the top */
+    height: 100vh; /* Full viewport height */
+    padding-top: 20px; /* Adjust top padding as needed */
+  }
+
   .music-player {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
-    /* Remove background */
     border-radius: 10px;
     padding: 10px;
     width: 200px;
-    /* Make smaller */
   }
 
   .image-container {
@@ -74,7 +83,6 @@
   #cover {
     width: 100%;
     border-radius: 50px;
-    /* Adjust for a smaller look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
@@ -85,16 +93,13 @@
     transform: translate(-50%, -50%);
     display: flex;
     gap: 30px;
-    /* Smaller gap */
   }
 
   .controls button {
     background-color: rgba(255, 255, 255, 0.9);
-    /* Light background */
     color: #333;
     border: none;
     padding: 8px 10px;
-    /* Smaller buttons */
     border-radius: 50px;
     font-size: 20px;
     cursor: pointer;
